@@ -1,0 +1,87 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.solar-system {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 20px 10px rgba(255, 255, 0, 0.7);
+    z-index: 10;
+}
+
+.planet {
+    position: absolute;
+    animation: orbit 10s linear infinite;
+    transform-origin: center center;
+}
+
+.planet-1, .planet-2, .planet-3, .planet-4, .planet-5, .planet-6, .planet-7, .planet-8 {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.planet-1 { background-color: gray; width: 20px; height: 20px; }
+.planet-2 { background-color: #d18b2c; width: 30px; height: 30px; }
+.planet-3 { background-color: #1e88e5; width: 35px; height: 35px; }
+.planet-4 { background-color: #f44336; width: 25px; height: 25px; }
+.planet-5 { background-color: #FFB74D; width: 60px; height: 60px; }
+.planet-6 { background-color: #ffeb3b; width: 55px; height: 55px; }
+.planet-7 { background-color: #4caf50; width: 45px; height: 45px; }
+.planet-8 { background-color: #4a90e2; width: 40px; height: 40px; }
+
+.orbit-1 { animation-duration: 5s; }
+.orbit-2 { animation-duration: 7s; }
+.orbit-3 { animation-duration: 9s; }
+.orbit-4 { animation-duration: 11s; }
+.orbit-5 { animation-duration: 13s; }
+.orbit-6 { animation-duration: 15s; }
+.orbit-7 { animation-duration: 17s; }
+.orbit-8 { animation-duration: 19s; }
+
+@keyframes orbit {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.info {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    display: none;
+    color: #fff;
+}
+
+.planet:hover .info {
+    display: block;
+}
